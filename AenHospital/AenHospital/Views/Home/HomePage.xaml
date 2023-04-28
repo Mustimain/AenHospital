@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+              prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AenHospital.Views.Home.HomePage" 
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+                xmlns:logsPage="clr-namespace:AenHospital.Views.Logs"
+            xmlns:paientsPage="clr-namespace:AenHospital.Views.Patient"
+            android:TabbedPage.ToolbarPlacement="Bottom" 
+            BarBackgroundColor="LightGray"
+    
+    BarTextColor="Black"
+    BackgroundColor="White"
+    SelectedTabColor="Black"
+    UnselectedTabColor="Black"
+            
+            >
+    <paientsPage:PatientsPage IconImageSource="patientIcon.png" Title="Hastalar"></paientsPage:PatientsPage>
+    <logsPage:LogsPage IconImageSource="logIcon.png" Title="Loglar"></logsPage:LogsPage>
+
+
+</TabbedPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:customs="clr-namespace:AenHospital.CustomControls"
+             x:Class="AenHospital.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <StackLayout Margin="0,100,0,0">
+                <!--<Label Text="AEN HOSPİTAL" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="40"></Label>-->
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="10">
+                <customs:CustomPicker HeightRequest="50" Title="Hastane Seçin" Margin="0,10,0,10" BorderColor="Black" ItemsSource="{Binding HospitalMasts}" ItemDisplayBinding="{Binding Description}" SelectedItem="{Binding SelectedHospitalMast}"></customs:CustomPicker>
+                <customs:CustomEntry HeightRequest="50" BorderColor="Black" Margin="0,10,0,10"  Placeholder="Kullanıcı Adı" Text="{Binding Username}" ></customs:CustomEntry>
+                <customs:CustomEntry  HeightRequest="50" BorderColor="Black" Placeholder="Şifre" IsPassword="True" Margin="0,10,0,10" Text="{Binding Password}"></customs:CustomEntry>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                    <CheckBox IsChecked="{Binding RememberMe}"></CheckBox>
+                    <Label Text="Beni Hatırla" VerticalOptions="Center"></Label>
+                </StackLayout>
+                <Button FontAttributes="Bold" Command="{Binding LoginCommand}" Margin="0,20,0,20" BackgroundColor="OrangeRed" TextColor="White" FontSize="18" CornerRadius="10" Text="Giriş Yap"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

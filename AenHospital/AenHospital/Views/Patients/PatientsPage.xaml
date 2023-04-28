@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AenHospital.Views.Patient.PatientsPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
+            <Grid BackgroundColor="White" RowSpacing="0" ColumnSpacing="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" ></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Label  Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"  Text="Hastalar" TextColor="Black" FontAttributes="Bold" FontSize="18" ></Label>
+
+                <Line  Opacity="0.5" Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="Gray"></Line>
+
+            </Grid>
+            
+            <ListView Margin="20"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding PatientsList}" HasUnevenRows="True"  VerticalScrollBarVisibility="Never" BackgroundColor="Transparent" SeparatorColor="Transparent" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout BackgroundColor="White" Padding="10">
+                                <Frame BorderColor="OrangeRed"   Padding="10" CornerRadius="10" BackgroundColor="White">
+                                    <StackLayout  BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout  BackgroundColor="Transparent" Padding="10,5,10,5">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="TcNo: "></Label>
+                                                <Label TextColor="Black" Text="{Binding PTN}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Hasta Kodu: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding PatientCode}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Ad Soyad: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding Patient}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Cinsiyet: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding Gender}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Yaş: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding Age}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Kat Bilgisi: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding FloorNo}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Yatak No: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding BedKey}"></Label>
+
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                           
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
