@@ -10,18 +10,60 @@
             xmlns:paientsPage="clr-namespace:AenHospital.Views.Patient"
             android:TabbedPage.ToolbarPlacement="Bottom" 
            android:TabbedPage.IsSwipePagingEnabled="False"
-            BarBackgroundColor="LightGray"
-        android:TabbedPage.IsSmoothScrollEnabled="False"
-
-    
-    BarTextColor="Black"
-    BackgroundColor="White"
-    SelectedTabColor="Black"
-    UnselectedTabColor="Black"
+    BarBackgroundColor="OrangeRed"
+            BarTextColor="White"
+            BackgroundColor="White"
+            SelectedTabColor="White"
+            UnselectedTabColor="White"
             
-            >
-    <paientsPage:PatientsPage IconImageSource="patientIcon.png" Title="Hastalar"></paientsPage:PatientsPage>
-    <logsPage:LogsPage IconImageSource="logIcon.png" Title="Loglar"></logsPage:LogsPage>
+>
+
+    <NavigationPage BarBackgroundColor="OrangeRed" Title="Hastalar" IconImageSource="patientIcon.png">
+        <x:Arguments>
+            <paientsPage:PatientsPage >
+                <NavigationPage.TitleView >
+                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" ></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label  Grid.Column="1" Grid.Row="0" Text="HASTA"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+
+                    </Grid>
+
+                </NavigationPage.TitleView>
+            </paientsPage:PatientsPage>
+
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage BarBackgroundColor="OrangeRed" Title="Loglar" IconImageSource="logIcon.png">
+        <x:Arguments>
+            <logsPage:LogsPage>
+                <NavigationPage.TitleView >
+                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" ></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label  Grid.Column="1" Grid.Row="0" Text="LOG"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+
+                    </Grid>
+
+                </NavigationPage.TitleView>
+            </logsPage:LogsPage>
+
+        </x:Arguments>
+    </NavigationPage>
 
 
 </TabbedPage>

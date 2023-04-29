@@ -6,22 +6,6 @@
              
              x:Class="AenHospital.Views.Patient.PatientsPage">
     <StackLayout BackgroundColor="White" >
-        <Grid BackgroundColor="White" RowSpacing="0" ColumnSpacing="0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="2*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60" ></RowDefinition>
-                <RowDefinition ></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Label  Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"  Text="Hastalar" TextColor="Black" FontAttributes="Bold" FontSize="18" ></Label>
-
-            <Line  Opacity="0.5" Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="Gray"></Line>
-
-        </Grid>
         <ListView Margin="20" VerticalOptions="FillAndExpand" SelectedItem="{Binding SelectedPatient}"   ItemsSource="{Binding PatientsList}" HasUnevenRows="True"  VerticalScrollBarVisibility="Never" BackgroundColor="White" SeparatorColor="Transparent" SelectionMode="Single">
             <ListView.Behaviors>
                 <prism:EventToCommandBehavior EventName="ItemTapped" Command="{Binding GoPatientDetailCommand}"></prism:EventToCommandBehavior>
