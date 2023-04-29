@@ -90,9 +90,9 @@ namespace AenHospital.ViewModels.Login
             {
                 return new Command(async () =>
                 {
-                  //  _username = "gkoc";
-                    //_password = "1453";
-                    if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password) && SelectedHospitalMast != null)
+                    _username = "gkoc";
+                    _password = "1453";
+                    if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password) /*&& SelectedHospitalMast != null*/)
                     {
                         
                         var result = await _authService.Login(Username, Password);
@@ -112,6 +112,18 @@ namespace AenHospital.ViewModels.Login
                     }
 
                     
+
+                });
+            }
+        }
+
+        public ICommand sscommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await Console.Out.WriteLineAsync(   );
 
                 });
             }

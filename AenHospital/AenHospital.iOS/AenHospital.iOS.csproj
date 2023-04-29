@@ -142,4 +142,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\patientIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\leftArrowIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\editIcon.png" />
+  </ItemGroup>
 </Project>

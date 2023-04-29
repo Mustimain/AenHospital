@@ -6,7 +6,6 @@ namespace AenHospital.Models
 {
     public class PatientOrder
     {
-        public string PatientCode { get; set; }
         public int PTN { get; set; }
         public DateTime OrderDate { get; set; }
         public string Description { get; set; }

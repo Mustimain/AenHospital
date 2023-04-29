@@ -15,8 +15,10 @@ namespace AenHospital.Services.Auth
 {
     public class AuthService : IAuthService
     {
-        private List<UserMast> users = new List<UserMast>();
+        private List<UserMast> users;
         public AuthService() {
+
+            users = new List<UserMast>();
         users.Add(new UserMast
         {
             Username="gkoc",

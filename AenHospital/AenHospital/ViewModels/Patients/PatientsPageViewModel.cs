@@ -1,12 +1,15 @@
 ﻿using AenHospital.Base;
 using AenHospital.Models;
 using AenHospital.Services.Patient.Interface;
+using AenHospital.Views.Patients.PatientDetail;
 using Prism.AppModel;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AenHospital.ViewModels.Patients
 {
@@ -40,7 +43,19 @@ namespace AenHospital.ViewModels.Patients
                 _patientsList.Clear();
                 result.ForEach(pt => PatientsList.Add(pt));
             }
-           
+            
+        }
+
+        public ICommand GoPatientDetailCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await navigationService.NavigateAsync(nameof(PatientDetailNavigationPage));
+
+                });
+            }
         }
 
     }

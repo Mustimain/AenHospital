@@ -9,10 +9,11 @@ namespace AenHospital.Services.Patient.Concrete
 {
     public class HospitalMastService : IHospitalMastService
     {
-        private List<HospitalMast> _Hospitals = new List<HospitalMast>();
+        private List<HospitalMast> _Hospitals;
 
         public HospitalMastService()
         {
+            _Hospitals = new List<HospitalMast>();
             _Hospitals.Add(new HospitalMast
             {
                 Keyfield =1,

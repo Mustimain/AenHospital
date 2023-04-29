@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AenHospital.Views.Patients.PatientDetail.PatientDetailNavigationPage"
+            xmlns:prism="http://prismlibrary.com"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            xmlns:ptAnamesis ="clr-namespace:AenHospital.Views.Patients.PatientAnamesis"
+            xmlns:ptOrder="clr-namespace:AenHospital.Views.Patients.PatientOrder" 
+            >
+    <NavigationPage  Title="Anamnez">
+        <x:Arguments >
+            <ptAnamesis:PatientAnamesisPage  >
+                <NavigationPage.TitleView >
+                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" ></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <ImageButton VerticalOptions="Center" Source="leftArrowIcon.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0"   HorizontalOptions="StartAndExpand" HeightRequest="30" WidthRequest="20"  Command="{Binding BackCommand}" ></ImageButton>
+                        <Label  Grid.Column="1" Grid.Row="0" Text="Anamnez Detay"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+                        <ImageButton VerticalOptions="Center" Source="editIcon.png" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0"  HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="20"  Command="{Binding EditCommand}" ></ImageButton>
+
+                    </Grid>
+
+                </NavigationPage.TitleView>
+
+            </ptAnamesis:PatientAnamesisPage>
+
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Reçete">
+        <x:Arguments>
+            <ptOrder:PatientPrescriptionPage >
+                <NavigationPage.TitleView >
+                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" ></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <ImageButton VerticalOptions="Center" Source="leftArrowIcon.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0"   HorizontalOptions="StartAndExpand" HeightRequest="30" WidthRequest="20"  Command="{Binding BackCommand}" ></ImageButton>
+                        <Label  Grid.Column="1" Grid.Row="0" Text="Reçete Detay"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+                        <ImageButton VerticalOptions="Center" Source="editIcon.png" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0"  HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="20"  Command="{Binding EditCommand}" ></ImageButton>
+
+                    </Grid>
+
+                </NavigationPage.TitleView>
+            </ptOrder:PatientPrescriptionPage>
+
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Tedavi">
+            <x:Arguments>
+            <ptOrder:PatientOrderPage >
+                <NavigationPage.TitleView >
+                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" ></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <ImageButton VerticalOptions="Center" Source="leftArrowIcon.png" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0"   HorizontalOptions="StartAndExpand" HeightRequest="30" WidthRequest="20"  Command="{Binding BackCommand}" ></ImageButton>
+                        <Label  Grid.Column="1" Grid.Row="0" Text="Tedavi Detay"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+                        <ImageButton VerticalOptions="Center" Source="editIcon.png" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0"  HorizontalOptions="EndAndExpand" HeightRequest="30" WidthRequest="20"  Command="{Binding EditCommand}" ></ImageButton>
+
+                    </Grid>
+
+                </NavigationPage.TitleView>
+            </ptOrder:PatientOrderPage>
+
+            </x:Arguments>
+        </NavigationPage>
+</TabbedPage>

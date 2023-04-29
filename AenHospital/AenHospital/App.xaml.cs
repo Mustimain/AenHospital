@@ -13,6 +13,16 @@ using AenHospital.ViewModels.Home;
 using AenHospital.Views.Patient;
 using AenHospital.ViewModels.Patients;
 
+using AenHospital.Views.Logs;
+using AenHospital.ViewModels.Logs;
+using AenHospital.Views.Patients.PatientAnamesis;
+using AenHospital.ViewModels.Patients.PatientAnamesis;
+using AenHospital.Views.Patients.PatientOrder;
+using AenHospital.ViewModels.Patients.PatientOrder;
+using AenHospital.ViewModels.Patients.PatientPrescription;
+using Prism.Mvvm;
+using AenHospital.Views.Patients.PatientDetail;
+
 namespace AenHospital
 {
     public partial class App
@@ -33,6 +43,17 @@ namespace AenHospital
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+
+            ViewModelLocationProvider.Register<LoginPage,LoginPageViewModel>();
+            ViewModelLocationProvider.Register<HomePage, HomePageViewModel>();
+            ViewModelLocationProvider.Register<PatientsPage, PatientsPageViewModel>();
+            ViewModelLocationProvider.Register<LogsPage, LogsPageViewModel>();
+            ViewModelLocationProvider.Register<PatientAnamesisPage, PatientAnamesisPageViewModel>();
+            ViewModelLocationProvider.Register<PatientOrderPage, PatientOrderPageViewModel>();
+            ViewModelLocationProvider.Register<PatientPrescriptionPage, PatientPrescriptionPageViewModel>();
+
+
+
             containerRegistry.RegisterInstance( typeof(IAuthService),new AuthService());
             containerRegistry.RegisterInstance(typeof(IHospitalMastService), new HospitalMastService());
             containerRegistry.RegisterInstance(typeof(IPatientAnamesisService), new PatientAnamesisService());
@@ -42,9 +63,19 @@ namespace AenHospital
 
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<PatientDetailNavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage,LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<PatientsPage, PatientsPageViewModel>();
+            containerRegistry.RegisterForNavigation<LogsPage, LogsPageViewModel>();
+            containerRegistry.RegisterForNavigation<PatientAnamesisPage, PatientAnamesisPageViewModel>();
+            containerRegistry.RegisterForNavigation<PatientOrderPage, PatientOrderPageViewModel>();
+            containerRegistry.RegisterForNavigation<PatientPrescriptionPage, PatientPrescriptionPageViewModel>();
+
+
+
+
+
 
         }
 

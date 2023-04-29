@@ -11,10 +11,10 @@ namespace AenHospital.Services.Patient.Concrete
 {
     public class PatientMastService : IPatientMastService
     {
-        private List<PatientMast> _Patients = new List<PatientMast>();
+        private List<PatientMast> _Patients;
         public PatientMastService() {
 
-
+            _Patients = new List<PatientMast>();
             _Patients.Add(new PatientMast
             {
                 PersonKey = 1586,
