@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace AenHospital.Models
@@ -7,7 +8,7 @@ namespace AenHospital.Models
     public class PatientMast
     {
         public int PersonKey { get; set; }
-        public string PTN { get; set; }
+        public BigInteger pTN { get; set; }
         public string PatientCode { get; set; }
         public string Patient { get; set; }
         public string Gender { get; set; }

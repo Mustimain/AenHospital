@@ -34,6 +34,19 @@ namespace AenHospital.ViewModels.Patients
                 _patientsList = value; RaisePropertyChanged();
             }
         }
+        private PatientMast _selectedPatient;
+        public PatientMast SelectedPatient
+        {
+            get
+            {
+                return _selectedPatient;
+            }
+            set
+            {
+                _selectedPatient = value; RaisePropertyChanged();
+            }
+        }
+
 
         public async void OnAppearing()
         {
@@ -52,7 +65,15 @@ namespace AenHospital.ViewModels.Patients
             {
                 return new Command(async () =>
                 {
-                    await navigationService.NavigateAsync(nameof(PatientDetailNavigationPage));
+                    if (SelectedPatient != null)
+                    {
+                        var navParams = new NavigationParameters
+                    {
+                        {"selectionPatient",SelectedPatient }
+                    };
+                        await navigationService.NavigateAsync(nameof(PatientDetailNavigationPage), navParams);
+
+                    }
 
                 });
             }

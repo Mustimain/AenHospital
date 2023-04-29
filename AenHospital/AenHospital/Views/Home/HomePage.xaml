@@ -9,7 +9,10 @@
                 xmlns:logsPage="clr-namespace:AenHospital.Views.Logs"
             xmlns:paientsPage="clr-namespace:AenHospital.Views.Patient"
             android:TabbedPage.ToolbarPlacement="Bottom" 
+           android:TabbedPage.IsSwipePagingEnabled="False"
             BarBackgroundColor="LightGray"
+        android:TabbedPage.IsSmoothScrollEnabled="False"
+
     
     BarTextColor="Black"
     BackgroundColor="White"

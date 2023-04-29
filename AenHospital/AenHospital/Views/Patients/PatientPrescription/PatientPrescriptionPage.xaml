@@ -5,10 +5,45 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="AenHospital.Views.Patients.PatientOrder.PatientPrescriptionPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White" >
+            <ListView Margin="20" VerticalOptions="FillAndExpand" SelectedItem="{Binding SASD}"   ItemsSource="{Binding PatientPrescriptions}" HasUnevenRows="True"  VerticalScrollBarVisibility="Never" BackgroundColor="White" SeparatorColor="Transparent" SelectionMode="Single">
+                <ListView.Behaviors>
+                    <prism:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SS}"></prism:EventToCommandBehavior>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout BackgroundColor="White" Padding="10">
+                                <Frame BorderColor="OrangeRed"   Padding="10" CornerRadius="10" BackgroundColor="White">
+                                    <StackLayout  BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout  BackgroundColor="Transparent" Padding="10,5,10,5">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="İlaç Ismi: "></Label>
+                                                <Label TextColor="Black" Text="{Binding Description}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Doze: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding Doze}"></Label>
+
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label TextColor="Black" Text="Kullanım Şekli: "></Label>
+
+                                                <Label TextColor="Black" Text="{Binding Usage}"></Label>
+
+                                            </StackLayout>
+
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

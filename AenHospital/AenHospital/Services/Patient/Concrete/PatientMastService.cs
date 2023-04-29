@@ -4,6 +4,7 @@ using AenHospital.Services.Patient.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace AenHospital.Services.Patient.Concrete
             _Patients.Add(new PatientMast
             {
                 PersonKey = 1586,
-                PTN = "202304270001",
+                pTN = new BigInteger(202304270001),
                 PatientCode="07000008",
                 Patient = "Mustafa Ceylan",
                 Gender = "M",
@@ -31,7 +32,7 @@ namespace AenHospital.Services.Patient.Concrete
             _Patients.Add(new PatientMast
             {
                 PersonKey = 1586,
-                PTN = "202304270002",
+                pTN = new BigInteger(202304270002) ,
                 PatientCode = "07000009",
                 Patient = "Gokhan Koc",
                 Gender = "M",
@@ -44,7 +45,7 @@ namespace AenHospital.Services.Patient.Concrete
             _Patients.Add(new PatientMast
             {
                 PersonKey = 1530,
-                PTN = "202304270004",
+                pTN = new BigInteger(202304270004),
                 PatientCode = "07000010",
                 Patient = "Cansu Oztekin",
                 Gender = "F",
