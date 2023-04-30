@@ -25,7 +25,7 @@
                                             <StackLayout Orientation="Horizontal">
                                                 <Label TextColor="Black" Text="Hikaye: "></Label>
 
-                                                <Label TextColor="Black" Text="{Binding InfoTxt}"></Label>
+                                                <Label TextColor="Black" Text="{Binding InvestigationTxt}"></Label>
 
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">

@@ -4,38 +4,46 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Text;
 using Xamarin.Forms;
 
 namespace AenHospital.Database
 {
-    public class EfDbContext : DbContext
+    public class EfDbContext : IEfDbContext
     {
-        protected readonly IConfiguration Configuration;
-
-        public EfDbContext(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
 
         public EfDbContext()
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public string server_name { get; set; }
+        public string server_user { get; set; }
+        public string server_pass { get; set; }
+        public string server_dbname { get; set; }
+
+        private SqlConnection sqlConnection;
+
+        public string GetConnectionString()
         {
-            
-            optionsBuilder.UseSqlServer(@"Server = (localdb)\Local; Database=Demo; Trusted_Connection = true;");
+            if (string.IsNullOrEmpty(server_name) || string.IsNullOrEmpty(server_dbname) || string.IsNullOrEmpty(server_user) || string.IsNullOrEmpty(server_pass))
+            {
+                return "error";
+            }
+
+            string serverString = $"Server={server_name}; Database={server_dbname};User Id={server_user};Password = {server_pass};";
+
+            return serverString;
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<UserMast>().HasNoKey();
-            modelBuilder.Entity<HospitalMast>().HasNoKey();
-        }
 
-        public virtual DbSet<UserMast> T_UserMasts { get; set; }
-        public virtual DbSet<HospitalMast> T_HospitalMasts { get; set; }
+        public SqlConnection Connection
+        {
+            get
+            {
+                return new SqlConnection(GetConnectionString());
+            }
+        }
 
 
     }

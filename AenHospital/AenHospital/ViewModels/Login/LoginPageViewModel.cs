@@ -1,4 +1,5 @@
 ﻿using AenHospital.Base;
+using AenHospital.Database;
 using AenHospital.Models;
 using AenHospital.Services.Auth;
 using AenHospital.Services.Patient.Interface;
@@ -9,6 +10,7 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -22,11 +24,13 @@ namespace AenHospital.ViewModels.Login
         private readonly IAuthService _authService;
         private readonly IPageDialogService _pageDialogService;
         private readonly IHospitalMastService _hospitalMastService;
+        private DataAccess dataAccess;
         public LoginPageViewModel(INavigationService service,IAuthService authService,IPageDialogService pageDialogService,IHospitalMastService hospitalMastService) : base(service)
         {
             _authService = authService;
             _pageDialogService = pageDialogService;
             _hospitalMastService = hospitalMastService;
+            dataAccess = new DataAccess();
         }
 
         private ObservableCollection<HospitalMast> _hospitalMasts = new ObservableCollection<HospitalMast>();
@@ -90,11 +94,14 @@ namespace AenHospital.ViewModels.Login
             {
                 return new Command(async () =>
                 {
+
+
+
                     _username = "gkoc";
                     _password = "1453";
                     if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password) /*&& SelectedHospitalMast != null*/)
                     {
-                        
+
                         var result = await _authService.Login(Username, Password);
                         if (result)
                         {
@@ -111,7 +118,7 @@ namespace AenHospital.ViewModels.Login
                         await _pageDialogService.DisplayAlertAsync("Hata", "Lütfen bilgileri eksiksiz doldurunuz.", "tamam");
                     }
 
-                    
+
 
                 });
             }

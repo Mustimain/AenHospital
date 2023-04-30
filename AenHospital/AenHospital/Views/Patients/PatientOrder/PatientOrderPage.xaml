@@ -31,7 +31,7 @@
                                             <StackLayout Orientation="Horizontal">
                                                 <Label TextColor="Black" Text="Uygulama Şekli: "></Label>
 
-                                                <Label TextColor="Black" Text="{Binding ResultTxt}"></Label>
+                                                <Label TextColor="Black" Text="{Binding InfoTxt}"></Label>
 
                                             </StackLayout>
                                             <StackLayout Orientation="Horizontal">
