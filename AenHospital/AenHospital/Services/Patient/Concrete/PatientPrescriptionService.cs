@@ -18,6 +18,7 @@ namespace AenHospital.Services.Patient.Concrete
 
             _patientPrescriptionList.Add(new PatientPrescription
             {
+                Id=1,
                 pTN = new BigInteger(202304270001),
                 Description = "DELODAY 0.5 MG/ML 150 ML SURUP",
                 Doze = 2,
@@ -26,6 +27,7 @@ namespace AenHospital.Services.Patient.Concrete
 
             _patientPrescriptionList.Add(new PatientPrescription
             {
+                Id=2,
                 pTN = new BigInteger(202304270001),
                 Description = "AUGMENTIN BID 1000 MG.14 FILM TB.",
                 Doze = 3,
@@ -34,6 +36,7 @@ namespace AenHospital.Services.Patient.Concrete
 
             _patientPrescriptionList.Add(new PatientPrescription
             {
+                Id=3,
                 pTN = new BigInteger(202304270001),
                 Description = "KLOROBEN 1,5 MG/ML + 1,2 MG/ML ORAL SPREY, COZELTI, 30 ML",
                 Doze = 1,
@@ -42,6 +45,7 @@ namespace AenHospital.Services.Patient.Concrete
 
             _patientPrescriptionList.Add(new PatientPrescription
             {
+                Id=4,
                 pTN = new BigInteger(202304270002),
                 Description = "Deneme Hapı 345",
                 Doze = 5,
@@ -50,6 +54,7 @@ namespace AenHospital.Services.Patient.Concrete
 
             _patientPrescriptionList.Add(new PatientPrescription
             {
+                Id=5,
                 pTN = new BigInteger(202304270002),
                 Description = "Deneme hapı 123",
                 Doze = 7,
@@ -60,6 +65,11 @@ namespace AenHospital.Services.Patient.Concrete
         {
             var result = _patientPrescriptionList.Where(prs => prs.pTN == ptn).ToList();
             return result;
+        }
+
+        public async Task UpdatePatientPrescription(PatientPrescription patientPrescription)
+        {
+            _patientPrescriptionList.Where(prs => prs.Id == patientPrescription.Id).Select(prs => prs = patientPrescription);
         }
     }
 }

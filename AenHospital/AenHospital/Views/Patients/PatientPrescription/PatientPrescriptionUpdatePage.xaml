@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AenHospital.Views.Patients.PatientPrescription.PatientPrescriptionUpdatePage" Title="Güncelleme">
+    <ContentPage.Content >
+        <StackLayout Margin="10">
+            <Editor Text="{Binding PrescriprionDetail.Description}" AutoSize="TextChanges"  ></Editor>
+            <Editor Text="{Binding PrescriprionDetail.Doze}"  AutoSize="TextChanges" ></Editor>
+            <Editor Text="{Binding PrescriprionDetail.Usage}"  AutoSize="TextChanges" ></Editor>
+            <Button HeightRequest="50" Text="Kaydet" FontAttributes="Bold" TextColor="White" Command="{Binding UpdatePrescription}" BackgroundColor="OrangeRed" CornerRadius="10"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

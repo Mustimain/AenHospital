@@ -3,17 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AenHospital.Views.Patients.PatientDetail.PatientDetailNavigationPage"
             xmlns:prism="http://prismlibrary.com"
-            prism:ViewModelLocator.AutowireViewModel="True"
             xmlns:ptAnamesis ="clr-namespace:AenHospital.Views.Patients.PatientAnamesis"
             xmlns:ptOrder="clr-namespace:AenHospital.Views.Patients.PatientOrder" 
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
            android:TabbedPage.IsSwipePagingEnabled="False"
             BarBackgroundColor="OrangeRed"
-            Title="Detay"
+            Title="Detay" >
 
-            >
-
-    <ptOrder:PatientPrescriptionPage Title="Reçete" >
+    <ptOrder:PatientPrescriptionPage  Title="Reçete" >
     </ptOrder:PatientPrescriptionPage>
 
     <ptAnamesis:PatientAnamesisPage Title="Anamnez">

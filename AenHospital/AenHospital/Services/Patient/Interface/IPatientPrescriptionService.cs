@@ -11,5 +11,6 @@ namespace AenHospital.Services.Patient.Interface
     {
         // Hastaya ait reçete listesi
         Task<List<PatientPrescription>> GetAllPatientPrescriptionByPtnAsync(BigInteger ptn);
+        Task UpdatePatientPrescription(PatientPrescription patientPrescription);
     }
 }

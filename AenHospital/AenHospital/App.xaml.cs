@@ -12,7 +12,6 @@ using AenHospital.Views.Home;
 using AenHospital.ViewModels.Home;
 using AenHospital.Views.Patient;
 using AenHospital.ViewModels.Patients;
-
 using AenHospital.Views.Logs;
 using AenHospital.ViewModels.Logs;
 using AenHospital.Views.Patients.PatientAnamesis;
@@ -22,6 +21,8 @@ using AenHospital.ViewModels.Patients.PatientOrder;
 using AenHospital.ViewModels.Patients.PatientPrescription;
 using Prism.Mvvm;
 using AenHospital.Views.Patients.PatientDetail;
+using AenHospital.ViewModels.Patients.PatientDetail;
+using AenHospital.Views.Patients.PatientPrescription;
 
 namespace AenHospital
 {
@@ -51,6 +52,7 @@ namespace AenHospital
             ViewModelLocationProvider.Register<PatientAnamesisPage, PatientAnamesisPageViewModel>();
             ViewModelLocationProvider.Register<PatientOrderPage, PatientOrderPageViewModel>();
             ViewModelLocationProvider.Register<PatientPrescriptionPage, PatientPrescriptionPageViewModel>();
+            ViewModelLocationProvider.Register<PatientPrescriptionUpdatePage, PatientPrescriptionUpdatePageViewModel>();
 
 
 
@@ -60,6 +62,9 @@ namespace AenHospital
             containerRegistry.RegisterInstance(typeof(IPatientMastService), new PatientMastService());
             containerRegistry.RegisterInstance(typeof(IPatientOrderService), new PatientOrderService());
             containerRegistry.RegisterInstance(typeof(IPatientPrescriptionService), new PatientPrescriptionService());
+            containerRegistry.RegisterInstance(typeof(ILogService), new LogService());
+
+
 
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
@@ -71,10 +76,7 @@ namespace AenHospital
             containerRegistry.RegisterForNavigation<PatientAnamesisPage, PatientAnamesisPageViewModel>();
             containerRegistry.RegisterForNavigation<PatientOrderPage, PatientOrderPageViewModel>();
             containerRegistry.RegisterForNavigation<PatientPrescriptionPage, PatientPrescriptionPageViewModel>();
-
-
-
-
+            containerRegistry.RegisterForNavigation<PatientPrescriptionUpdatePage, PatientPrescriptionUpdatePageViewModel>();
 
 
         }

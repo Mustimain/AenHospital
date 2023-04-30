@@ -95,11 +95,7 @@ namespace AenHospital.ViewModels.Login
                 return new Command(async () =>
                 {
 
-
-
-                    _username = "gkoc";
-                    _password = "1453";
-                    if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password) /*&& SelectedHospitalMast != null*/)
+                    if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
                     {
 
                         var result = await _authService.Login(Username, Password);

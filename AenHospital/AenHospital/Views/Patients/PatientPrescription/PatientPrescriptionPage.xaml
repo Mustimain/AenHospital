@@ -2,18 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="AenHospital.Views.Patients.PatientOrder.PatientPrescriptionPage">
+             x:Class="AenHospital.Views.Patients.PatientOrder.PatientPrescriptionPage"
+             x:Name="PatPresPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="White" >
-            <ListView Margin="20" VerticalOptions="FillAndExpand" SelectedItem="{Binding SASD}"   ItemsSource="{Binding PatientPrescriptions}" HasUnevenRows="True"  VerticalScrollBarVisibility="Never" BackgroundColor="White" SeparatorColor="Transparent" SelectionMode="Single">
+            <ListView Margin="20" VerticalOptions="FillAndExpand" SelectedItem="{Binding SelectedPatientPrescrition}"   ItemsSource="{Binding PatientPrescriptions}" HasUnevenRows="True"  VerticalScrollBarVisibility="Never" BackgroundColor="White" SeparatorColor="Transparent" SelectionMode="Single">
                 <ListView.Behaviors>
-                    <prism:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SS}"></prism:EventToCommandBehavior>
+                    <prism:EventToCommandBehavior EventName="ItemTapped" Command="{Binding GoPrescriptionDetail}"></prism:EventToCommandBehavior>
                 </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <StackLayout BackgroundColor="White" Padding="10">
+                           
+
+                                <StackLayout BackgroundColor="White" Padding="10">
+                                
                                 <Frame BorderColor="OrangeRed"   Padding="10" CornerRadius="10" BackgroundColor="White">
                                     <StackLayout  BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                         <StackLayout  BackgroundColor="Transparent" Padding="10,5,10,5">
@@ -40,6 +43,7 @@
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
+
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
