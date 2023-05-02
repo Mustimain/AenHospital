@@ -57,13 +57,17 @@ namespace AenHospital.ViewModels.Patients.PatientPrescription
                     {
                     
                         await _patientPrescriptionService.UpdatePatientPrescription(PrescriprionDetail);
+                        var logs = await _logService.GetAllLogs();
+                        var count = logs.Count +1;
                         await _logService.Log(new Models.T_Log
                         {
-                            Keyfield = Utils.UserInfo.SelectionHospital.Keyfield,
+                            
+                            Keyfield = count,
                             Log = "Reçete Güncellemesi Yapıldı",
                             LogDate = DateTime.Now,
-                            LogTipi = "Güncelleme",
-                            UserCode = Utils.UserInfo.CurrentUser.PersonKey.ToString(),
+                            LogTipi = Models.Enums.LogType.Güncelleme,
+                            UserCode = Utils.UserInfo.CurrentUser.PersonKey,
+                            pTN = PrescriprionDetail.pTN
 
 
                         });

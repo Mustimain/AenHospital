@@ -56,13 +56,13 @@ namespace AenHospital
 
 
 
-            containerRegistry.RegisterInstance( typeof(IAuthService),new AuthService());
+            containerRegistry.RegisterInstance(typeof(IAuthService),new AuthService());
             containerRegistry.RegisterInstance(typeof(IHospitalMastService), new HospitalMastService());
             containerRegistry.RegisterInstance(typeof(IPatientAnamesisService), new PatientAnamesisService());
             containerRegistry.RegisterInstance(typeof(IPatientMastService), new PatientMastService());
             containerRegistry.RegisterInstance(typeof(IPatientOrderService), new PatientOrderService());
             containerRegistry.RegisterInstance(typeof(IPatientPrescriptionService), new PatientPrescriptionService());
-            containerRegistry.RegisterInstance(typeof(ILogService), new LogService());
+            containerRegistry.RegisterInstance(typeof(ILogService), new LogService(new PatientMastService(),new HospitalMastService()));
 
 
 

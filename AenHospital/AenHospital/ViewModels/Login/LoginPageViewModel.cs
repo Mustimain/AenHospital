@@ -95,7 +95,7 @@ namespace AenHospital.ViewModels.Login
                 return new Command(async () =>
                 {
 
-                    if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
+                    if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password) && SelectedHospitalMast != null)
                     {
 
                         var result = await _authService.Login(Username, Password);

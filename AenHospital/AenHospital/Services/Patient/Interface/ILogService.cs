@@ -8,5 +8,6 @@ namespace AenHospital.Services.Patient.Interface
     {
         Task Log(T_Log t_Log);
         Task<List<T_Log>> GetAllLogs();
+        Task<List<T_Log_Detail>> GetAllLogsDetail();
     }
 }

@@ -60,5 +60,15 @@ namespace AenHospital.Services.Patient.Concrete
             var result = _Patients.Where(pt => pt.PersonKey == Utils.UserInfo.CurrentUser.PersonKey).ToList();
             return result;
         }
+
+        public async Task<PatientMast> GetPatientMastByIdAsync(BigInteger pTN)
+        {
+            if (pTN != null)
+            {
+                var result = _Patients.Where(ptn => ptn.pTN == pTN).FirstOrDefault();
+                return result;
+            }
+            return null;
+        }
     }
 }
