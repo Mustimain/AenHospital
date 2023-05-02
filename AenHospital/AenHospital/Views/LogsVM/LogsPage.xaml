@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism ="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="AenHospital.Views.Logs.LogsPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" >
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                <StackLayout  Margin="5,0,5,0">
+                    <Label Text="Başlangıç:"></Label>
+                    <DatePicker  Date="{Binding StartDate}"></DatePicker>
+
+                </StackLayout>
+                <StackLayout Margin="5,0,5,0">
+                    <Label Text="Bitiş"></Label>
+                    <DatePicker Date="{Binding FinishDate}"></DatePicker>
+
+                </StackLayout>
+                <Button  Margin="5,0,5,0" BackgroundColor="OrangeRed" TextColor="White" CornerRadius="5" Text="Ara" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding FilterCommand}"></Button>
+                <Button  Margin="5,0,5,0" BackgroundColor="OrangeRed" TextColor="White" CornerRadius="5" Text="Temizle" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding CleanListCommand}"></Button>
+
+            </StackLayout>
+            
+            <CollectionView   ItemsSource="{Binding LogList}"   VerticalScrollBarVisibility="Never" BackgroundColor="White"  SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" ></GridItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <StackLayout Margin="10,0,10,0" Padding="10">
+                            
+                        <Frame  Padding="0" BorderColor="OrangeRed"  CornerRadius="10" BackgroundColor="White">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="2*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="2*" />
+
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="User:" Grid.Row="0" Grid.Column="0"></Label>
+                                        <Label Text="{Binding User.Description}" Grid.Row="0" Grid.Column="1"></Label>
+                                    </Grid>
+                                </StackLayout>
+                                <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="2*" />
+
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="Detay:" Grid.Row="0" Grid.Column="0"></Label>
+                                        <Label Text="{Binding Log.Log}" Grid.Row="0" Grid.Column="1"></Label>
+                                    </Grid>
+                                </StackLayout>
+
+                            </Grid>
+                        </Frame>
+                        </StackLayout>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,5 +1,4 @@
 ﻿using AenHospital.Base;
-using AenHospital.Database;
 using AenHospital.Models;
 using AenHospital.Services.Auth;
 using AenHospital.Services.Patient.Interface;
@@ -24,13 +23,11 @@ namespace AenHospital.ViewModels.Login
         private readonly IAuthService _authService;
         private readonly IPageDialogService _pageDialogService;
         private readonly IHospitalMastService _hospitalMastService;
-        private DataAccess dataAccess;
         public LoginPageViewModel(INavigationService service,IAuthService authService,IPageDialogService pageDialogService,IHospitalMastService hospitalMastService) : base(service)
         {
             _authService = authService;
             _pageDialogService = pageDialogService;
             _hospitalMastService = hospitalMastService;
-            dataAccess = new DataAccess();
         }
 
         private ObservableCollection<HospitalMast> _hospitalMasts = new ObservableCollection<HospitalMast>();

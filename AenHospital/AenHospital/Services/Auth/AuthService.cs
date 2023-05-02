@@ -1,8 +1,4 @@
-﻿using AenHospital.Database;
-using AenHospital.Models;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using AenHospital.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
